@@ -1,0 +1,248 @@
+@import url('https://fonts.googleapis.com/css2?family=Honk&display=swap');
+
+*{
+    margin: 0;
+    padding: 0;
+}
+body{
+    height: 100vh;
+    width: 100%;
+    overflow: hidden;
+    background-color: #34495e;
+    font-family: 'Archivo Black', sans-serif;
+}
+
+.container{
+    height: 90vh;
+    width: 20rem;
+    border: 2px solid black;
+    background-color: #24527a;
+    position: relative;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    position: relative;
+    overflow: hidden;
+}
+.container .bg video{
+    height: 100%;
+    width: 100%;
+    position: absolute;
+    bottom: 0rem;
+    z-index: -1;
+    opacity: 0.3;
+    object-fit: cover;
+}
+.container .coins{
+    margin:1rem 2rem;
+    display: flex;
+    justify-content: flex-end;
+    position: relative;
+    z-index: 1;
+}
+.container .coins p{
+    background-color: #EF5D5D;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 4rem;
+    height: 1.5rem;
+    color: white;
+    border: 1px solid black;
+    border-radius: 6px;
+    transition: all 0.2s ease-in;
+}
+.container .coins p:hover{
+    transform: scale(1.09);
+    font-size: 1.1rem;
+    cursor: pointer;
+}
+.container .coins span{
+    margin-right: 5px;
+}
+
+.container .text{
+    height: 20%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 2rem;
+    font-family: 'Honk', system-ui;
+    color: white;
+}
+
+.container .btn{
+    height: 50%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-around;
+}
+.container .btn button{
+    height: 3rem;
+    width: 8rem;
+    background-color: #EF5D5D;
+    color: white;
+    border: 1px solid black;
+    border-radius: 10px;
+    outline: none;
+    font-size: 1.2rem;
+    font-family: 'Archivo Black', sans-serif;
+    transition: all 0.2s ease-in;
+}
+.container .btn button:hover{
+    transform: scale(1.07);
+    cursor: pointer;
+    font-size: 1.4rem;
+}
+
+.container .character{
+    height: 70%;
+    width: 100%;
+    display: flex;
+    justify-content: flex-end;
+}
+.container .character img{
+    height: 100%;
+    width: 100%;
+    object-fit: contain;
+    position: relative;
+    left: 4rem;
+}
+.container .input{
+    position: relative;
+    left: 20%;
+    bottom:8rem;
+    width: 55%;
+}
+.container .input input{
+    width: 100%;
+    height: 100%;
+    padding: 0.5rem 1rem;
+    border: 1px solid black;
+    border-radius: 10px;
+    outline: none;
+    background-color: #00d9ff2c;
+    color: white;
+    transition: all 0.2s ease-in;
+}
+.container .input input::placeholder{
+    color: #fff;
+}
+.container .input input:hover{
+    transform: scale(1.05);
+}
+.container .input input:focus{
+    transform: scale(1.15);
+}
+
+.container .play-bg img{
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    opacity: 0.4;
+}
+
+.container .play-btn{
+    height: 25%;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+    position: relative;
+    bottom: 6rem;
+}
+.container .play-btn button{
+    height: 3rem;
+    width: 8rem;
+    background-color: #EF5D5D;
+    border: 1px solid black;
+    border-radius: 10px;
+    color: white;
+    cursor: pointer;
+    transition: all 0.2s ease-in;
+    font-size: 1.2rem;
+}
+.container .play-btn button:hover{
+    transform: scale(1.07);
+    cursor: pointer;
+    font-size: 1.4rem;
+}
+
+
+.container .game-name{
+    height: 10%;
+    width: 50%;
+    margin: auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 2rem;
+    color: white;
+}
+.container .game-btn{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    height: 40%;
+    width: 20%;
+    margin:0 0.5rem;
+}
+.container .game-btn button{
+    width: 100%;
+    height: 2rem;
+    background-color: #be3f3f96;
+    border: 1px solid black;
+    border-radius: 10px;
+    color: white;
+    cursor: pointer;
+    transition: all 0.2s ease-in;
+    font-size: 1rem;
+}
+.container .game-btn button:hover{
+    transform: scale(1.07);
+    cursor: pointer;
+    font-size: 1.1rem;
+}
+
+.container .game-character{
+    height: 70%;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    position: absolute;
+    top: 6rem;
+    z-index: -1;
+}
+.container .games{
+    width: 100%;
+    height: 30%;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+.container .games button{
+    height: 5rem;
+    width: 4rem;
+    background-color: #EF5D5D;
+    border: 1px solid black;
+    border-radius: 10px;
+    color: white;
+    cursor: pointer;
+    transition: all 0.2s ease-in;
+    font-size: 1rem;
+}
+.container .games button:hover{
+    transform: scale(1.07);
+    cursor: pointer;
+    font-size: 1.1rem;
+}
+
+
+@media screen and (max-width:768px) {
+    .container{
+        height: 100%;
+        width: 100%;
+    }
+}
