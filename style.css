@@ -70,6 +70,33 @@ body{
     font-family: 'Honk', system-ui;
     color: white;
 }
+.container .text i{
+    height: 1.4rem;
+    width: 1.4rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 0 1rem;
+    font-size: 0.9rem;
+    background-color: greenyellow;
+    border-radius: 50%;
+    color: black;
+    transform: rotate(-10deg);
+    position: relative;
+    animation: coin 3s ease-in-out infinite;
+}
+
+@keyframes coin {
+    0%{
+        top: 10px;
+    }
+    50%{
+        top: -10px;
+    }
+    100%{
+        top: 10px;
+    }
+}
 
 .container .btn{
     height: 50%;
@@ -232,6 +259,8 @@ body{
     cursor: pointer;
     transition: all 0.2s ease-in;
     font-size: 1rem;
+    display: inline-grid;
+    align-items: center;
 }
 .container .games button:hover{
     transform: scale(1.07);
