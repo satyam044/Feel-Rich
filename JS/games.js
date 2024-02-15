@@ -1,8 +1,8 @@
 let container = document.querySelector(".container")
-let touchpad = document.querySelector(".touchpad")
 let gamesContainer = document.querySelector(".game-container")
 let minesContainer = document.querySelector(".mines-container")
 let coins = document.querySelector("#coinsJs")
+let touchpad = document.querySelector(".touchpad")
 
 let coinHtml = parseInt(coins.innerText);
 
@@ -67,30 +67,48 @@ for (var i = 1; i <= numberOfMines; i++) {
     let lost = false;
 
     minesBox.addEventListener("click", () => {
-        if (minesBox.classList.contains("bomb") && lost == false) {
+
+        let betAmt = document.querySelector("#mines-bet")
+        betAmt.addEventListener("change", function () {
+            let result = coins.innerText - betAmt.value
+            coins.innerText = result
+        })
+        if (minesBox.classList.contains("bomb") && !lost) {
             document.querySelectorAll(".mines-game-box").forEach(box => {
                 box.classList.add("mines-game-box-open");
-                box.style.opacity = "0.3"
+                box.style.opacity = "0.3";
                 lost = true;
+                box.style.pointerEvents = "none";
+                minesCashout.innerText = "Bet";
             });
         }
-        if (lost) {
-            minesCashout.innerText = "Bet";
-            minesCashout.addEventListener("click",function(){
+        if (lost || minesCashout.click) {
+            minesCashout.addEventListener("click", function () {
                 document.querySelectorAll(".mines-game-box").forEach(box => {
-                    lost = false;
-                    bombPlacement()
+                    box.classList.remove("mines-game-box-open");
+                    box.classList.remove("opacity");
+                    box.style.opacity = "1";
+                    box.style.pointerEvents = "visible";
                 });
-            })
+                lost = false;
+                selectElement.style.pointerEvents = "auto";
+                minesBet.style.pointerEvents = "auto";
+                minesCashout.style.pointerEvents = "auto";
+                minesCashout.style.backgroundColor = "#ef5d5d81";
+                minesCashout.innerText = "CashOut";
+
+                bombPlacement();
+            });
         }
+
         minesBox.classList.add("mines-game-box-open");
         minesBox.classList.add("opacity");
-        minesBox.style.opacity = "1"
-        selectElement.style.pointerEvents = "none"
-        minesBet.style.pointerEvents = "none"
-        minesCashout.style.backgroundColor = "#EF5D5D"
-
+        minesBox.style.opacity = "1";
+        selectElement.style.pointerEvents = "none";
+        minesBet.style.pointerEvents = "none";
+        minesCashout.style.backgroundColor = "#EF5D5D";
     });
+
 }
 
 // mines select
