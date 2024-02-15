@@ -13,8 +13,8 @@ body{
 }
 
 .container{
-    height: 90vh;
-    width: 20rem;
+    height: 100vh;
+    width: 100vw;
     border: 2px solid black;
     background-color: #34495e;
     position: relative;
@@ -30,7 +30,7 @@ body{
     position: absolute;
     bottom: 0rem;
     z-index: -1;
-    opacity: 0.3;
+    opacity: 0.1;
     object-fit: cover;
 }
 .container .coins{
@@ -48,8 +48,8 @@ body{
     display: flex;
     align-items: center;
     justify-content: space-around;
-    width: 4rem;
-    height: 1.5rem;
+    width: 7rem;
+    height: 2.5rem;
     color: white;
     border: 1px solid black;
     border-radius: 6px;
@@ -156,12 +156,13 @@ body{
 }
 .container .input{
     position: relative;
-    left: 20%;
     bottom:8rem;
-    width: 55%;
+    width: 100%;
+    display: flex;
+    justify-content: center;
 }
 .container .input input{
-    width: 100%;
+    width: 20rem;
     height: 100%;
     padding: 0.5rem 1rem;
     border: 1px solid black;
@@ -185,7 +186,8 @@ body{
     position: absolute;
     height: 100%;
     width: 100%;
-    opacity: 0.4;
+    opacity: 0.1;
+    object-fit: cover;
 }
 
 .container .play-btn{
@@ -231,8 +233,8 @@ body{
     flex-direction: column;
     justify-content: space-evenly;
     height: 40%;
-    width: 20%;
-    margin:0 0.5rem;
+    width: 6rem;
+    margin:0 3.5rem;
 }
 .container .game-btn button,#coinGG{
     width: 100%;
@@ -273,7 +275,7 @@ body{
     width: 100%;
     height: 30%;
     display: flex;
-    justify-content: space-around;
+    justify-content: space-evenly;
     align-items: center;
 }
 .container .games button{
@@ -329,7 +331,7 @@ body{
 
 .mines-game{
     height: 50%;
-    width: 80%;
+    width: 30%;
     margin: auto;
     border-radius: 10px;
     display: flex;
@@ -368,12 +370,25 @@ body{
 .mines-game .mines-game-box-open::after{
     transform: rotateY(180deg);
 }
+.mines-game .mines-game-box-open{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 1.3rem;
+    filter: invert(1);
+}
+.mines-game .bomb{
+    filter: invert(0);
+}
+.opacity{
+    opacity: 1 !important;
+}
 
 .mines-btn{
-    width: 70%;
+    width: 30%;
     margin: 1rem auto;
     display: flex;
-    justify-content: space-between;
+    justify-content: space-evenly;
     color: aliceblue;
 
 }
@@ -416,10 +431,15 @@ body{
     top: 1.3rem;
     font-size: 1rem;
 }
+.mine-back a{
+    display: flex;
+    justify-content:center ;
+    width: 100%;
+    text-decoration: none;
+}
 .mine-back button{
-    width: 70%;
+    width: 30%;
     height: 2.5rem;
-    left: 15%;
     position: relative;
     border: 2px solid black;
     border-radius: 10px;
@@ -445,6 +465,10 @@ body{
     align-items: center;
     color: rgba(255, 255, 255, 0.598);
     font-size: 0.8rem;
+    cursor: pointer;
+    -webkit-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
 }
 .container .touchpad p{
     margin: 0 1rem;
