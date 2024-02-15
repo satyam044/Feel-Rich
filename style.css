@@ -479,4 +479,21 @@ body{
         height: 100%;
         width: 100%;
     }
+    .container .game-btn {
+        margin: 0 0.5rem;
+    }
+    .mines-game{
+        width: 60%;
+    }
+    .mines-btn{
+        width: 80vw;
+    }
+    .mine-back button{
+        width: 60%;
+    }
+}
+@media screen and (max-width:425px) {
+    .mines-game{
+        width: 90%;
+    }
 }
