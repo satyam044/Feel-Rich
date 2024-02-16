@@ -17,6 +17,9 @@ touchpad.addEventListener("click", function () {
 let mines = document.getElementById("Mines")
 let minesBack = document.querySelector("#mines-back-btn")
 
+var minesAudio = new Audio("../Src/collectcoin-6075.mp3");
+
+
 mines.addEventListener("click", function () {
     gamesContainer.style.display = "none"
     touchpad.style.display = "none"
@@ -67,12 +70,15 @@ for (var i = 1; i <= numberOfMines; i++) {
     let lost = false;
 
     minesBox.addEventListener("click", () => {
+        let gameStarted = true;
 
-        let betAmt = document.querySelector("#mines-bet")
-        betAmt.addEventListener("change", function () {
+        if (gameStarted) {
+            let betAmt = document.querySelector("#mines-bet")
             let result = coins.innerText - betAmt.value
             coins.innerText = result
-        })
+            gameStarted = false;
+        }
+
         if (minesBox.classList.contains("bomb") && !lost) {
             document.querySelectorAll(".mines-game-box").forEach(box => {
                 box.classList.add("mines-game-box-open");
@@ -81,6 +87,9 @@ for (var i = 1; i <= numberOfMines; i++) {
                 box.style.pointerEvents = "none";
                 minesCashout.innerText = "Bet";
             });
+
+            // bomb audio
+
         }
         if (lost || minesCashout.click) {
             minesCashout.addEventListener("click", function () {

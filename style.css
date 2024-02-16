@@ -331,7 +331,7 @@ body{
 
 .mines-game{
     height: 50%;
-    width: 30%;
+    width: 25%;
     margin: auto;
     border-radius: 10px;
     display: flex;
@@ -348,13 +348,10 @@ body{
     width: 15%;
     margin: 0 0.2rem;
     cursor: pointer;
-    border: 1px solid black;
     border-radius: 10px;
-    transform: rotateY(180deg);
-    transition: 0.25s;    
-    display: flex;
-    justify-content: center;
-    align-items: center;
+    transform: rotateY(180deg) !important;
+    font-size: 0rem;
+    transition: 0.25s , font-size 0ms;
 }
 .mines-game .mines-game-box .mines-game-box-open{
     transform: rotateY(0deg);
@@ -375,11 +372,29 @@ body{
 }
 .mines-game .mines-game-box-open{
     font-size: 1.3rem;
-    filter: invert(1);
+    filter: invert(1);    
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    animation: boxOpen 0.5s 1 ease;
 }
+
+@keyframes boxOpen {
+    0%{
+        scale: 1;
+    }
+    50%{
+        scale: 1.1;
+    }
+    100%{
+        scale: 1;
+    }
+}
+
 .mines-game .bomb{
     filter: invert(0);
 }
+
 .opacity{
     opacity: 1 !important;
 }
@@ -483,7 +498,7 @@ body{
         margin: 0 0.5rem;
     }
     .mines-game{
-        width: 60%;
+        width: 45%;
     }
     .mines-btn{
         width: 80vw;
