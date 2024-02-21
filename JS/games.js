@@ -1,8 +1,26 @@
+let bg = document.querySelector(".container .play-bg img")
 let container = document.querySelector(".container")
+let playContainer = document.querySelector(".play-container")
+let playContainerPlay = document.querySelector(".play-container #play")
+let nameInput = document.querySelector(".play-container .input input")
+let gameName = document.querySelector(".game-container .game-name")
 let gamesContainer = document.querySelector(".game-container")
 let minesContainer = document.querySelector(".mines-container")
+let dragonContainer = document.querySelector(".dragon-container")
 let coins = document.querySelector("#coinsJs")
 let touchpad = document.querySelector(".touchpad")
+
+nameInput.addEventListener("keyup",function(){
+    let keyup = true;
+    if (keyup == true) {
+        playContainerPlay.addEventListener("click",function(){
+            playContainer.style.display = "none"
+        })
+        gameName.innerHTML = nameInput.value
+    }
+})
+
+
 
 let coinHtml = parseInt(coins.innerText);
 
@@ -24,11 +42,13 @@ mines.addEventListener("click", function () {
     gamesContainer.style.display = "none"
     touchpad.style.display = "none"
     minesContainer.style.display = "contents"
+    bg.style.display = "none"
 })
 minesBack.addEventListener("click", function () {
     gamesContainer.style.display = "block"
     touchpad.style.display = "flex"
     minesContainer.style.display = "none"
+    bg.style.display = "block"
 })
 
 // mines box
@@ -137,3 +157,20 @@ for (var i = 1; i <= numberOfOptions; i++) {
     });
 
 }
+
+// Dragon
+let dragon = document.getElementById("Dragon")
+let dragonBack = document.querySelector(".dragon-back")
+
+dragon.addEventListener("click", function () {
+    gamesContainer.style.display = "none"
+    touchpad.style.display = "none"
+    dragonContainer.style.display = "contents"
+    bg.style.display = "none"
+})
+dragonBack.addEventListener("click", function () {
+    gamesContainer.style.display = "block"
+    touchpad.style.display = "flex"
+    dragonContainer.style.display = "none"
+    bg.style.display = "block"
+})

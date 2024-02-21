@@ -12,7 +12,28 @@
 </head>
 
 <body>
+    <div class="play-container">
+        <div class="play-bg">
+            <img src="../Src/background.png" alt="">
+        </div>
+        <div class="coins">
+            <p><span>100</span><i class="fa-brands fa-gg"></i></p>
+        </div>
+        <div class="character">
+            <img src="../Src/character.png" alt="">
+        </div>
+        <div class="input">
+            <input type="text" placeholder="Enter Your Name">
+        </div>
+        <div class="play-btn">
+            <a href="#" id="play"><button><i class="fa-solid fa-play"></i> Play</button></a>
+            <a href="../index.html"><button><i class="fa-solid fa-backward"></i> Back</button></a>
+        </div>
+    </div>
     <div class="container">
+        <div class="play-bg">
+            <img src="../Src/background.png" alt="">
+        </div>
         <div class="coins">
             <a href=""><button id="coinsJs">100 <i class="fa-solid fa-coins"></i></button></a>
         </div>
@@ -24,13 +45,12 @@
                 <a href=""><button><i class="fa-solid fa-cart-shopping"></i></button></a>
             </div>
             <div class="game-character">
-                <img src="https://static.vecteezy.com/system/resources/previews/022/483/823/non_2x/eccentric-3d-boy-magician-with-floating-objects-ideal-for-surreal-or-abstract-designs-transparent-background-free-png.png"
-                    alt="">
+                <img src="../Src/Character.png" alt="">
             </div>
             <div class="games">
                 <a href="#"><button id="Mines"><i class="fa-regular fa-gem"></i> Mines</button></a>
                 <a href="#"><button><i class="fa-solid fa-rocket"></i> Crash</button></a>
-                <a href="#"><button><i class="fa-solid fa-chart-line"></i> Trade</button></a>
+                <a href="#"><button id="Dragon"><i class="fa-solid fa-dragon"></i> Dragon Tower</button></a>
                 <a href="#"><button><i class="fa-solid fa-film"></i> Ads</button></a>
             </div>
         </div>
@@ -51,6 +71,25 @@
                 <a href="#"><button id="mines-back-btn"><i class="fa-solid fa-backward"></i> Back</button></a>
             </div>
         </div>
+        <div class="dragon-container">
+            <div class="dragon-game"></div>
+            <div class="dragon-btn">
+                <div class="dragon-bet">
+                    <p>Bet Amount</p>
+                    <input type="number" id="mines-bet" value="25">
+                </div>
+                <button id="dragon-Cashout">CashOut</button>
+            </div>
+            <div class="dragon-back">
+                <a href="#"><button id="mines-back-btn"><i class="fa-solid fa-backward"></i> Back</button></a>
+            </div>
+        </div>
+
+
+
+
+
+
         <div class="touchpad">
             <i class="fa-solid fa-chevron-left"></i><i class="fa-solid fa-ellipsis"></i><p> Tap To Increase Coins </p><i class="fa-solid fa-ellipsis"></i><i class="fa-solid fa-chevron-right"></i>
         </div>
