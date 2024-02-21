@@ -26,7 +26,7 @@
             <input type="text" placeholder="Enter Your Name">
         </div>
         <div class="play-btn">
-            <a href="#" id="play"><button><i class="fa-solid fa-play"></i> Play</button></a>
+            <button id="play"><i class="fa-solid fa-play"></i> Play</button>
             <a href="../index.html"><button><i class="fa-solid fa-backward"></i> Back</button></a>
         </div>
     </div>
@@ -71,9 +71,22 @@
                 <a href="#"><button id="mines-back-btn"><i class="fa-solid fa-backward"></i> Back</button></a>
             </div>
         </div>
+
+
+
+
+
         <div class="dragon-container">
             <div class="dragon-game"></div>
             <div class="dragon-btn">
+                <div class="dragon-select">
+                    <p>Difficulty</p>
+                    <select name="Dragon" id="dragon-select">
+                        <option value="Hard">Hard</option>
+                        <option value="Medium">Medium</option>
+                        <option value="Easy">Easy</option>
+                    </select>
+                </div>
                 <div class="dragon-bet">
                     <p>Bet Amount</p>
                     <input type="number" id="mines-bet" value="25">

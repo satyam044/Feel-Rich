@@ -431,17 +431,17 @@ body{
     color: aliceblue;
 
 }
-.mines-btn .mines-select p,.mines-btn .mines-bet p,.dragon-btn .dragon-bet p{
+.mines-btn .mines-select p,.mines-btn .mines-bet p,.dragon-btn .dragon-select p,.dragon-btn .dragon-bet p{
     font-size: 0.7rem;
     margin: 0.4rem 0;
 }
-.mines-btn .mines-select,.mines-btn .mines-bet,.dragon-btn .dragon-bet{
+.mines-btn .mines-select,.mines-btn .mines-bet,.dragon-btn .dragon-select,.dragon-btn .dragon-bet{
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
 }
-.mines-btn .mines-select select{
+.mines-btn .mines-select select,.dragon-btn .dragon-select select{
     outline: none;
     border: none;
     height: 1.5rem;
@@ -494,18 +494,59 @@ body{
 
 .dragon-game{
     height: 50%;
-    width: 25%;
+    width: 22%;
     margin: auto;
-    background-color: #253545;
     border-radius: 10px;
     display: flex;
     flex-wrap: wrap;
     justify-content: space-around;
     padding: 0.5rem;
+    transform-style: preserve-3d;
+    perspective: 500px;
+}
+.dragon-game .dragon-game-box{
+    position: relative;
+    background-color: #EF5D5D;
+    width: 45%;
+    height: 10%;
+    margin: 0 0.2rem;
+    cursor: pointer;
+    border-radius: 10px;
+    transform: rotateY(180deg) !important;
+    font-size: 0rem;
+    transition: 0.25s , font-size 0ms;
+}
+.dragon-game .dragon-game-box .dragon-game-box-open{
+    transform: rotateY(0deg);
 }
 
+.dragon-game .dragon-game-box::after{
+    content: "";
+    position: absolute;
+    inset: 0;
+    border: 1px solid black;
+    border-radius: 10px;
+    background-color: #253545;
+    transition: 0.25s;
+    transform: rotateY(0deg);
+    backface-visibility: hidden;
+}
 
+.dragon-game .dragon-game-box-open::after{
+    transform: rotateY(180deg);
+}
 
+.dragon-game .dragon-game-box-open{
+    font-size: 1.3rem;
+    filter: invert(1);    
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.dragon-game .dragon-game-box:hover{
+    top: -2px;
+}
 
 
 
@@ -552,5 +593,8 @@ body{
 @media screen and (max-width:425px) {
     .mines-game,.dragon-game{
         width: 90%;
+    }
+    .play-container .input input{
+        width: 70vw;
     }
 }

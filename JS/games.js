@@ -10,17 +10,6 @@ let dragonContainer = document.querySelector(".dragon-container")
 let coins = document.querySelector("#coinsJs")
 let touchpad = document.querySelector(".touchpad")
 
-nameInput.addEventListener("keyup",function(){
-    let keyup = true;
-    if (keyup == true) {
-        playContainerPlay.addEventListener("click",function(){
-            playContainer.style.display = "none"
-        })
-        gameName.innerHTML = nameInput.value
-    }
-})
-
-
 
 let coinHtml = parseInt(coins.innerText);
 
@@ -29,6 +18,17 @@ touchpad.addEventListener("click", function () {
     coins.innerHTML = `${coinHtml} <i class="fa-solid fa-coins"></i>`;
 });
 
+
+
+// nameInput.addEventListener("keyup",function(){
+    let keyup = true;
+    if (keyup == true) {
+        playContainerPlay.addEventListener("click",function(){
+            playContainer.style.display = "none"
+        })
+        gameName.innerHTML = nameInput.value
+    }
+// })
 
 
 // mines
@@ -174,3 +174,28 @@ dragonBack.addEventListener("click", function () {
     dragonContainer.style.display = "none"
     bg.style.display = "block"
 })
+
+
+// Dragon Game
+
+let dragonCnt = document.querySelector(".dragon-container .dragon-game");
+let fire = '<i class="fa-solid fa-fire"></i>';
+let skeleton = '<i class="fa-solid fa-skull"></i>';
+var dragonSelect = document.getElementById("dragon-select");
+var dragonBet = document.querySelector(".dragon-bet");
+var dragonCashout = document.getElementById("dragon-Cashout");
+let numberOfDragonBox = 14;
+
+
+for (var i = 1; i <= numberOfDragonBox; i++) {
+let dragonBox = document.createElement("div");
+dragonBox.classList.add("dragon-game-box");
+dragonCnt.appendChild(dragonBox);
+
+dragonBox.addEventListener("click", () => {
+    dragonBox.classList.add("dragon-game-box-open");
+    dragonSelect.style.pointerEvents = "none";
+    dragonBet.style.pointerEvents = "none";
+    dragonCashout.style.backgroundColor = "#EF5D5D";
+});
+}
